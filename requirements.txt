@@ -6,4 +6,4 @@ wordcloud
 pandas
 emoji
 joblib
-sklearn
+scikit-learn
