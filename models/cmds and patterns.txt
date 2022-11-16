@@ -1,0 +1,15 @@
+Commands for running the app in the local host
+1. py -m streamlit run app.py
+
+Pattern for date and time extraction if the given time format is 12 hours
+pattern - \d{1,2}\/\d{2,4}\/\d{2,4},\s\d{1,2}:\d{1,2}\s\w{1,2}\s-\s
+
+pattern for 24 hour format
+\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s-\s
+
+Problems facing -
+1.How to make the website compatible for both 12 and 24 hour format, now only 24 hour format
+2.How to extract date and time from 12 hour format
+3.Choose the correct algorithm and make it more efficient, now using logistic regression , efficiency is 62%,
+  should make the efficiency more than 70%
+4.Deploy it to heroku to make it live for everyone to use.
