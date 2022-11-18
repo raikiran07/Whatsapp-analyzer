@@ -7,10 +7,10 @@ import joblib
 pipe_lr = joblib.load(open("./models/emotion_classifier_pipe_lr_03_june_2021.pkl", "rb"))
 
 #code for the sidebar
-st.sidebar.title("Whatsapp Analyzer")
+st.title("Whatsapp Analyzer")
 
 #code for uploading the file
-uploaded_file = st.sidebar.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
@@ -26,9 +26,9 @@ if uploaded_file is not None:
     user_list.remove('group_notification')
     user_list.sort()
     user_list.insert(0,"Overall")
-    selected_user = st.sidebar.selectbox("Show analysis wrt",user_list)
+    selected_user = st.selectbox("Show analysis wrt",user_list)
 
-    if st.sidebar.button("Show Analysis"):
+    if st.button("Show Analysis"):
         num_of_msg,words,num_media_msg,num_of_links = helper.fetch_stats(selected_user, df)
         col1, col2, col3, col4 = st.columns(4)
         with col1:
