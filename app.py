@@ -1,3 +1,4 @@
+import alt as alt
 import pandas as pd
 import probability as probability
 import streamlit as st
