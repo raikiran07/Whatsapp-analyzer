@@ -1,3 +1,5 @@
+import pandas as pd
+import probability as probability
 import streamlit as st
 import preprocess
 import helper
@@ -165,6 +167,16 @@ if uploaded_file is not None:
         st.success("{}:{}".format(emotion,emoji_icon))
         # emoji_icon = emotions_emoji_dict[prediction]
         # st.write("{}:{}".format(prediction, emoji_icon))
+
+        st.title("Prediction Probability")
+        # st.write(probability)
+        proba_df = pd.DataFrame(probability, columns=pipe_lr.classes_)
+        # st.write(proba_df.T)
+        proba_df_clean = proba_df.T.reset_index()
+        proba_df_clean.columns = ["emotions", "probability"]
+
+        fig = alt.Chart(proba_df_clean).mark_bar().encode(x='emotions', y='probability', color='emotions')
+        st.altair_chart(fig, use_container_width=True)
 
 
 
