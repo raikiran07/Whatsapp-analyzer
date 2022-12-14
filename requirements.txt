@@ -7,3 +7,4 @@ pandas
 emoji
 joblib
 scikit-learn
+probability
